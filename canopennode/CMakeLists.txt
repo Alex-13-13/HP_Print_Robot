@@ -1,6 +1,8 @@
 idf_component_register(
     SRCS
         "CANopen.c"
+        "CO_driver.c"
+        "OD.c"
         
         # --- 301 (CANopen application layer) ---
         "301/CO_fifo.c"
@@ -30,8 +32,8 @@ idf_component_register(
         "309/CO_gateway_ascii.c"
 
         # --- Storage ---
-        "storage/CO_storage.c"
-        "storage/CO_storageEeprom.c"
+        #"storage/CO_storage.c"
+        #"storage/CO_storageEeprom.c"
 
         # --- Extra (tracing, performance, etc.) ---
         "extra/CO_trace.c"
