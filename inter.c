@@ -17,7 +17,7 @@
 // ---------------------------------------------------
 // Parámetros ajustables
 // ---------------------------------------------------
-#define PULSE_WIDTH_MS 400   // duración del pulso (ms)
+#define PULSE_WIDTH_MS 200   // duración del pulso (ms)
 #define RETRY_DELAY_MS 3000  // demora entre reintentos (ms)
 #define MAX_RETRIES 50       // número máximo de intentos
 
@@ -74,7 +74,7 @@ static void gpio_task(void *arg) {
                         pulse_active = true;
                         pulse_start_time = xTaskGetTickCount() * portTICK_PERIOD_MS;
 
-                        gpio_set_level(OUTPUT_GPIO, 0);  // LÍNEA A LOW
+                        gpio_set_level(OUTPUT_GPIO, 0);  // LÍNEA A LOW   
                         ESP_LOGI(TAG, "Pulso iniciando: línea LOW por %d ms", PULSE_WIDTH_MS);
                     }
                 }
@@ -94,7 +94,7 @@ void setup_gpio(void)
     // Configurar pin de salida (línea compartida)
     gpio_config_t output_config = {
     .pin_bit_mask = (1ULL << OUTPUT_GPIO),
-    .mode = GPIO_MODE_INPUT_OUTPUT,   // Permitir lectura desde salida
+    .mode = GPIO_MODE_INPUT_OUTPUT_OD,   // Permitir lectura desde salida
     .pull_up_en = GPIO_PULLUP_ENABLE,
     .pull_down_en = GPIO_PULLDOWN_DISABLE,
     .intr_type = GPIO_INTR_DISABLE
