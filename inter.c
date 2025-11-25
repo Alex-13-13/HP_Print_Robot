@@ -140,7 +140,7 @@ void update_pulse(void) {
 }
 
 // ---------------------------------------------------
-// Función princip
+// Función principal
 // ---------------------------------------------------
 void app_main(void) {
     setup_gpio();
