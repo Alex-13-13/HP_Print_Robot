@@ -1,0 +1,10 @@
+
+
+Como podemos ver en la primera imagen, hemos enviado dos pulsos en un tiempo aleatorio, uno por cada esp32, ya que el ancho de banda de ellos es diferente.
+
+
+En la segunda imagen, probamos de enviar los dos a la vez, y vemos que el segundo que intenta enviar ve que la línea está ocupada y entonces espera 3s para intentar transmitir otra vez.
+
+Pruebas con interferencia:
+
+Hemos conectado 
